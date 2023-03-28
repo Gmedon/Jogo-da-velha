@@ -17,6 +17,7 @@ let slot5 = 0
 let slot6 = 0
 let slot7 = 0
 let slot8 = 0
+let slotsativados = [0, 0, 0, 0, 0, 0, 0, 0, 0]
 
 let ganhador = "arvore"
 
@@ -136,14 +137,24 @@ function validacao() {
 
 function slot() {
     if (vezdejogo == 1) {
-        ColocarArvore()
+        if (slotsativados[slotescolhido] == 0) {
+            ColocarArvore()
+        }
     } else if (vezdejogo == 2) {
-        ColocarMotoserra()
+        if (slotsativados[slotescolhido] == 0) {
+            ColocarMotoserra()
+        }
     }
     if (vezdejogo == 1) {
-        vezdejogo = 2
+        if (slotsativados[slotescolhido] == 0) {
+            vezdejogo = 2
+            slotsativados[slotescolhido] = 1
+        }
     } else if (vezdejogo == 2) {
-        vezdejogo = 1
+        if (slotsativados[slotescolhido] == 0) {
+            vezdejogo = 1
+            slotsativados[slotescolhido] = 1
+        }
     }
 }
 
@@ -164,6 +175,7 @@ function limpartudo() {
     }
     for (let i in buttons) {
         buttons[i].setAttribute("src", "img/branco.png")
+        slotsativados[i] = 0
     }
 
 }
@@ -179,63 +191,81 @@ function ColocarMotoserra() {
 
 buttons[0].addEventListener("click", function SlotEscolhidofuncao() {
     slotescolhido = 0
-    slot0 = vezdejogo
+    if (slot0 == 0) {
+        slot0 = vezdejogo
+    }
     slot()
     validacao()
 })
 
 buttons[1].addEventListener("click", function SlotEscolhidofuncao() {
     slotescolhido = 1
-    slot1 = vezdejogo
+    if (slot1 == 0) {
+        slot1 = vezdejogo
+    }
     slot()
     validacao()
 })
 
 buttons[2].addEventListener("click", function SlotEscolhidofuncao() {
     slotescolhido = 2
-    slot2 = vezdejogo
+    if (slot2 == 0) {
+        slot2 = vezdejogo
+    }
     slot()
     validacao()
 })
 
 buttons[3].addEventListener("click", function SlotEscolhidofuncao() {
     slotescolhido = 3
-    slot3 = vezdejogo
+    if (slot3 == 0) {
+        slot3 = vezdejogo
+    }
     slot()
     validacao()
 })
 
 buttons[4].addEventListener("click", function SlotEscolhidofuncao() {
     slotescolhido = 4
-    slot4 = vezdejogo
+    if (slot4 == 0) {
+        slot4 = vezdejogo
+    }
     slot()
     validacao()
 })
 
 buttons[5].addEventListener("click", function SlotEscolhidofuncao() {
     slotescolhido = 5
-    slot5 = vezdejogo
+    if (slot5 == 0) {
+        slot5 = vezdejogo
+    }
     slot()
     validacao()
 })
 
 buttons[6].addEventListener("click", function SlotEscolhidofuncao() {
     slotescolhido = 6
-    slot6 = vezdejogo
+    if (slot6 == 0) {
+        slot6 = vezdejogo
+    }
     slot()
     validacao()
 })
 
 buttons[7].addEventListener("click", function SlotEscolhidofuncao() {
     slotescolhido = 7
-    slot7 = vezdejogo
+    if (slot7 == 0) {
+        slot7 = vezdejogo
+    }
     slot()
     validacao()
 })
 
 buttons[8].addEventListener("click", function SlotEscolhidofuncao() {
     slotescolhido = 8
-    slot8 = vezdejogo
+    if (slot8 == 0) {
+        slot8 = vezdejogo
+    }
     slot()
     validacao()
 })
